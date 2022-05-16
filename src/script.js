@@ -32,8 +32,26 @@ const walls = new THREE.Mesh(
   new THREE.BoxBufferGeometry(4, 2.5, 4),
   new THREE.MeshStandardMaterial({ color: "#ac8e82" })
 );
-walls.position.y = Math.PI * 0.5;
+walls.position.y = 2.5 / 2;
 house.add(walls);
+
+// Roof
+const roof = new THREE.Mesh(
+  new THREE.ConeBufferGeometry(3.5, 1, 4),
+  new THREE.MeshStandardMaterial({ color: "#b35f45" })
+);
+roof.position.y = 2.5 + 0.5;
+roof.rotation.y = Math.PI * 0.25;
+house.add(roof);
+
+// Door
+const door = new THREE.Mesh(
+  new THREE.PlaneBufferGeometry(2, 2),
+  new THREE.MeshStandardMaterial({ color: "#aa7b7b" })
+);
+door.position.z = 2.01;
+door.position.y = 1;
+house.add(door);
 
 // Floor
 const floor = new THREE.Mesh(
